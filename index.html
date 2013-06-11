@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd ">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Processing Snake</title>
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+
+<script type="text/javascript" src="processing-1.1.0.min.js"></script>
+
+<script type="text/javascript" src="snake.js"></script>
+</head>
+<body>
+<canvas id="snakecanv" ></canvas>
+<input type="button" id="start" value="start" />
+<script type="text/javascript" >
+var snakeOn = false;
+
+var canvassa = $("canvas#snakecanv").get(0);
+	
+	var toggleSnakeStart = function ( ) {
+					if (!snakeOn) {	
+				//$("canvas#snakecanv").show();
+
+				var q = new Processing( canvassa, snakeSketch );
+							
+				canvassa.focus();
+
+				$("#start").attr('value','stop');
+				
+				snakeOn = true;
+				
+			} else {
+
+				snakeSketch.turnOff();
+
+				//$("canvas#snakecanv").hide();
+							
+				$("#start").attr('value' ,'start');
+
+				snakeOn = false;
+				
+			}
+	} 
+	
+$("#start").click( function(  ) {
+	//e.preventDefault();
+	toggleSnakeStart();
+});
+</script>
+
+</body>
+</html>
