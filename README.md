@@ -1,4 +1,5 @@
-= Snake = 
+#  Snake #
+
 
 A javascript Version of the videogame Snake
 
